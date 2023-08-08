@@ -122,7 +122,7 @@ const Login = () => {
             </Form>
           </div>
         </div>
-        <div className="col-12 col-md-6  d-none d-md-flex flex-column align-items-center justify-content-center login-container--right">
+        <div className="col-12 col-md-6 px-0  d-none d-md-flex flex-column align-items-center justify-content-center login-container--right">
           <div className="login_backgroud-image">
             <img src={Logo} alt="Logo" className="img-fluid" />
           </div>
