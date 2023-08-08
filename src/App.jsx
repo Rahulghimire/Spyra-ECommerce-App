@@ -17,7 +17,7 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<Login />} /> */}
             <Route path="/" element={<AsyncLogin />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<AsyncHome />} />
             <Route
               path="*"
               element={

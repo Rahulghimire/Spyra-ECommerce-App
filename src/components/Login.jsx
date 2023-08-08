@@ -1,62 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import "../index.css";
 import Form from "react-bootstrap/Form";
 import { Button, InputGroup } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import { signInSchema } from "../schemas";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [companyCode, setCompanyCode] = useState("");
-  const [isValidEmail, setIsValidEmail] = useState(true);
-
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (!companyCode.trim()) {
-      alert("Please enter a valid country code.");
-      return;
-    }
-
-    if (!userName.trim()) {
-      alert("Please enter a valid username or email address.");
-      return;
-    }
-
-    if (!password.trim()) {
-      alert("Please enter a valid password.");
-      return;
-    }
-
-    const body = {
-      userName,
-      password,
-      companyCode,
-    };
-
-    console.log(body);
-
-    // axios
-    //   .post(`${API_BASE_URL}/Auth/signin`, body)
-    //   .then((res) => {
-    //     const data = res.data;
-
-    //     dispatch(
-    //       userLogin({ user_id: data.data.id, user_name: data.data.userName })
-    //     );
-
-    //     navigate("/");
-    //   })
-    //   .catch((e) => {
-    //     alert("Something went wrong.");
-    //   });
-
-    navigate("/home");
+  const initialValues = {
+    country_code: "",
+    email: "",
+    password: "",
   };
+
+  const { values, touched, errors, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: signInSchema,
+      onSubmit: (values, action) => {
+        console.log("From values::", values);
+        action.resetForm();
+      },
+    });
 
   return (
     <section className="login-container">
@@ -69,31 +39,41 @@ const Login = () => {
             </p>
           </div>
           <div>
-            <Form className="login-form">
+            <Form className="login-form" onSubmit={handleSubmit}>
               <Form.Group className="mb-4" controlId="Form.ControlInput1">
                 <Form.Label>Enter your company code </Form.Label>
                 <Form.Control
                   type="number"
+                  name="country_code"
                   placeholder="Enter company code"
                   style={{ minWidth: "17rem" }}
                   min={0}
-                  value={companyCode}
-                  onChange={(e) => {
-                    setCompanyCode(e.target.value);
-                  }}
+                  autoComplete="off"
+                  value={values.country_code}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
+                {errors.country_code && touched.country_code ? (
+                  <p className="font-weight-bold text-danger">
+                    {errors.country_code}
+                  </p>
+                ) : null}
               </Form.Group>
               <Form.Group className="mb-4" controlId="Form.ControlInput2">
                 <Form.Label>Enter your username or email address</Form.Label>
                 <Form.Control
                   type="email"
+                  name="email"
                   placeholder="Username or email address"
                   style={{ minWidth: "17rem" }}
-                  value={userName}
-                  onChange={(e) => {
-                    setUserName(e.target.value);
-                  }}
+                  value={values.email}
+                  autoComplete="off"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
+                {errors.email && touched.email ? (
+                  <p className="font-weight-bold text-danger">{errors.email}</p>
+                ) : null}
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Enter your password</Form.Label>
@@ -102,10 +82,11 @@ const Login = () => {
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
                     style={{ borderRight: "none", minWidth: "17rem" }}
-                    value={password}
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
+                    value={values.password}
+                    autoComplete="off"
+                    name="password"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                   <Button
                     className="eye-button"
@@ -114,6 +95,13 @@ const Login = () => {
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                   </Button>
                 </InputGroup>
+                <div>
+                  {errors.password && touched.password ? (
+                    <p className="font-weight-bold text-danger">
+                      {errors.password}
+                    </p>
+                  ) : null}
+                </div>
                 <div className="my-1 d-flex flex-row w-100 justify-content-end">
                   <p style={{ color: "#de5384", fontWeight: "700" }}>
                     <Link
@@ -127,7 +115,7 @@ const Login = () => {
                 </div>
               </Form.Group>
               <Form.Group>
-                <button className="signIn-button mb-2" onClick={handleLogin}>
+                <button className="signIn-button mb-2" type="submit">
                   Sign In
                 </button>
               </Form.Group>
