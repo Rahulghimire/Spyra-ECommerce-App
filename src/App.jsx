@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 
 const AsyncHome = lazy(() => import("./pages/Home"));
 const AsyncLogin = lazy(() => import("./components/Login"));
+const AsyncDashboard = lazy(() => import("./pages/Dashboard"));
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
             {/* <Route path="/" element={<Login />} /> */}
             <Route path="/" element={<AsyncLogin />} />
             <Route path="/home" element={<AsyncHome />} />
+            <Route path="/dashboard" element={<AsyncDashboard />} />
+
             <Route
               path="*"
               element={

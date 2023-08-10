@@ -1,0 +1,59 @@
+.dashboard_container {
+  /* background-color: rgba(253, 253, 253, 255); */
+  background-color: #fdfdfd;
+}
+.form-control {
+  position: relative;
+  padding: 0.375rem 1.2rem;
+  border: none;
+  background-color: #f5f5f5;
+}
+.input-group-text {
+  border: none;
+  background-color: #f5f5f5;
+}
+.sidebar {
+  box-shadow: 0.2rem 0.2rem 0.2rem#e8e8e8;
+  background-color: #ffffff;
+  height: 100%;
+}
+.analytics_text {
+  letter-spacing: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+.anchor-tag {
+  color: #7f9cb3;
+}
+.dashboard_links {
+  padding: 0.6rem;
+  background-color: #f5f5f5;
+  border-radius: 0.2rem;
+  margin: 0 0 0.8rem 0;
+  font-size: 0.8rem;
+}
+
+.dashboard_links-bottom {
+  color: #8faac0;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.toggler_bar {
+  background-color: #f1f5f7;
+  box-shadow: 0.2rem 0.2rem 0.2rem#e8e8e8;
+  border-radius: 1rem;
+  padding: 0.1rem;
+}
+.toggle_text {
+  color: #bcccd9;
+}
+.toggle_button {
+  border: none;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  padding: 0.3rem 2.9rem 0.3rem 0.3rem;
+}
+
+.toggle_button-2 {
+  padding: 0.3rem 0.3rem 0.3rem 2.9rem;
+}
