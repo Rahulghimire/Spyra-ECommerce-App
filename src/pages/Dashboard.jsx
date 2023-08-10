@@ -2,10 +2,18 @@ import React, { useState } from "react";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import "./Dashboard.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import menuIcon from "../assets/menu.svg";
 import { MdWbSunny, MdNightsStay } from "react-icons/md";
 import { MdEqualizer, MdSettings, MdExitToApp } from "react-icons/md";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import { FaBars } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
+import nepalFlagIcon from "../assets/nepal-flag-icon.svg";
+import { MdMessage } from "react-icons/md";
+import { MdNotifications } from "react-icons/md";
+import Avatar from "react-avatar";
 
 const Dashboard = () => {
   const [searchText, setSearchText] = useState("");
@@ -43,84 +51,102 @@ const Dashboard = () => {
               <p className="text-uppercase analytics_text">Analytics</p>
             </div>
             <div className="d-flex flex-column justify-content-between gap-5">
-              <div className="">
-                <div className="">
-                  <div className="dashboard_links d-flex align-items-center">
+              <div>
+                <div className="dashboard_links-container">
+                  <NavLink
+                    to="/dashboard"
+                    className="text-decoration-none dashboard_links anchor-tag active-link"
+                    exact
+                  >
                     <img
                       src={menuIcon}
                       width={13}
                       height={12}
                       style={{ marginRight: "0.7rem" }}
+                      className="icon"
                     />
-                    <Link to="#" className="text-decoration-none anchor-tag">
-                      Dashboard
-                    </Link>
-                  </div>
+                    Dashboard
+                  </NavLink>
                 </div>
-                <div>
-                  <p className="dashboard_links d-flex align-items-center">
+                <div className="dashboard_links-container">
+                  <NavLink
+                    to="/product-management"
+                    className="text-decoration-none dashboard_links anchor-tag "
+                    exact
+                  >
                     <img
                       src={menuIcon}
                       width={13}
                       height={12}
                       style={{ marginRight: "0.7rem" }}
+                      className="icon"
                     />
-                    <Link to="#" className="text-decoration-none anchor-tag">
-                      Product Management
-                    </Link>
-                  </p>
+                    Product Management
+                  </NavLink>
                 </div>
-                <div>
-                  <p className="dashboard_links  d-flex align-items-center">
+                <div className="dashboard_links-container">
+                  <NavLink
+                    to="/catalogue-management"
+                    className="text-decoration-none dashboard_links anchor-tag"
+                    exact
+                  >
                     <img
                       src={menuIcon}
                       width={13}
                       height={12}
                       style={{ marginRight: "0.7rem" }}
+                      className="icon"
                     />
-                    <Link to="#" className="text-decoration-none anchor-tag">
-                      Catalogue Management
-                    </Link>
-                  </p>
+                    Catalogue Management
+                  </NavLink>
                 </div>
-                <div>
-                  <p className="dashboard_links  d-flex align-items-center">
+                <div className="dashboard_links-container">
+                  <NavLink
+                    to="/user-management"
+                    className="text-decoration-none dashboard_links anchor-tag"
+                    exact
+                  >
                     <img
                       src={menuIcon}
                       width={13}
                       height={12}
                       style={{ marginRight: "0.7rem" }}
+                      className="icon"
                     />
-                    <Link to="#" className="text-decoration-none anchor-tag">
-                      User Management
-                    </Link>
-                  </p>
+                    User Management
+                  </NavLink>
                 </div>
-                <div>
-                  <p className="dashboard_links  d-flex align-items-center">
+                <div className="dashboard_links-container">
+                  <NavLink
+                    to="/order-management"
+                    className="text-decoration-none dashboard_links anchor-tag"
+                    exact
+                  >
                     <img
                       src={menuIcon}
                       width={13}
                       height={12}
                       style={{ marginRight: "0.7rem" }}
+                      className="icon"
                     />
-                    <Link to="#" className="text-decoration-none anchor-tag">
-                      Order Management
-                    </Link>
-                  </p>
+                    Order Management
+                  </NavLink>
                 </div>
-                <div>
-                  <p className="dashboard_links  d-flex align-items-center">
+                <div className="dashboard_links-container">
+                  <NavLink
+                    to="/payment-invoice"
+                    className="text-decoration-none dashboard_links anchor-tag"
+                    exact
+                  >
                     <img
                       src={menuIcon}
                       width={13}
                       height={12}
                       style={{ marginRight: "0.7rem" }}
+                      className="icon"
                     />
-                    <Link to="#" className="text-decoration-none anchor-tag">
-                      Payment & Invoice
-                    </Link>
-                  </p>
+                    Payment & Invoice
+                  </NavLink>
                 </div>
               </div>
               <div className="d-flex flex-column">
@@ -164,6 +190,54 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="col-9 card_outer-container">
+          <div className="row">
+            <div className="col-12 header-container">
+              <div className="d-flex flex-row justify-content-between">
+                <div className="header-container--left d-flex flex-row align-items-center">
+                  <div>
+                    <FaBars />
+                  </div>
+                  <div>
+                    <FaGlobe />
+                  </div>
+                  <div>
+                    <span>Sabin G.</span>
+                  </div>
+                </div>
+                <div className="header-container--right d-flex align-items-center">
+                  <div className="me-2 icon-background">
+                    <img
+                      src={nepalFlagIcon}
+                      alt="nepal-flag-icon"
+                      width={25}
+                      height={20}
+                    />
+                  </div>
+                  <div className="me-2 icon-background">
+                    <MdMessage size={20} />
+                  </div>
+                  <div className="me-3 icon-background">
+                    <MdNotifications size={20} />
+                  </div>
+                  <div>
+                    <Avatar githubHandle="sitebase" size={25} round="20px" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col d-flex flex-row card_container justify-content-between gap-1">
+              <div className="col-3 card">component</div>
+              <div className="col-3 card">Hello</div>
+              <div className="col-3 card">Hello</div>
+              <div className="col-3 card">Hello</div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">Hello</div>
+            <div className="col-6">World</div>
           </div>
         </div>
       </div>
