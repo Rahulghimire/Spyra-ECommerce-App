@@ -4,14 +4,15 @@ import Sidemenu from "../Dashboard/Sidemenu";
 import Header from "../Dashboard/Header";
 import Card from "../components/Card";
 import Tables from "../Dashboard/Tables";
+
 const Dashboard = () => {
   return (
     <div className="container-fluid dashboard_container">
       <div className="row">
-        <div className="col-2 col-md-2 col-lg-3 sidebar p-1 p-md-4">
+        <div className="d-none d-md-block col-2 col-md-2 col-lg-3 sidebar p-1 p-md-2 p-lg-4">
           <Sidemenu />
         </div>
-        <div className="col-9 card_outer-container">
+        <div className="col-12 col-md-9 card_outer-container">
           <div className="row">
             <Header />
             <div className="row m-0">
@@ -26,12 +27,12 @@ const Dashboard = () => {
           <div className="row mt-4">
             <div className="col-lg-6 col-md-12">
               <div>
-                <Tables />
+                <Tables title="Top New Order" />
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
               <div>
-                <Tables />
+                <Tables title="Top New Customer" />
               </div>
             </div>
           </div>

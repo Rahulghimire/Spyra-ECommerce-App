@@ -1,6 +1,6 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-const index = () => {
+const index = ({ title }) => {
   const columns = [
     {
       name: "Order ID",
@@ -107,7 +107,7 @@ const index = () => {
           className="m-0"
           style={{ fontSize: "0.8rem", fontWeight: "bold", color: "#4f5573" }}
         >
-          Top New Order
+          {title}
         </p>
 
         {/* <DataTable
