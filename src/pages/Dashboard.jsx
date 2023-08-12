@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import Sidemenu from "../Dashboard/Sidemenu";
 import Header from "../Dashboard/Header";
-import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import Chart from "../components/Chart";
 import Card from "../components/Card";
-
+import Tables from "../Dashboard/Tables";
 const Dashboard = () => {
   return (
     <div className="container-fluid dashboard_container">
@@ -26,9 +23,17 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-6">Hello</div>
-            <div className="col-6">World</div>
+          <div className="row mt-4">
+            <div className="col-lg-6 col-md-12">
+              <div>
+                <Tables />
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-12">
+              <div>
+                <Tables />
+              </div>
+            </div>
           </div>
         </div>
       </div>
