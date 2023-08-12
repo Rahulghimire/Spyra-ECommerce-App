@@ -27,7 +27,13 @@ const Header = () => {
               <FaGlobe style={{ color: "#6bb8ff" }} size={15} />
             </div>
             <div className="ms-3">
-              <span style={{ color: "#626782", fontWeight: "400" }}>
+              <span
+                style={{
+                  color: "#626782",
+                  fontWeight: "500",
+                  fontSize: "0.67rem",
+                }}
+              >
                 Sabin G.
               </span>
             </div>

@@ -2,6 +2,7 @@
   /* background-color: rgba(253, 253, 253, 255); */
   background-color: #fdfdfd;
 }
+
 /* .dashboard_links-container {
   display: flex;
   flex-direction: row;
@@ -19,7 +20,7 @@
   background-color: #f5f5f5;
 }
 .sidebar {
-  box-shadow: 0.2rem 0.2rem 0.3rem#e8e8e8;
+  box-shadow: 0.3rem 0.3rem 0.5rem#e9e9e9;
   background-color: #ffffff;
   height: 100%;
 }
@@ -64,15 +65,17 @@
 .toggle_text {
   color: #bcccd9;
 }
-.toggle_button {
+.toggle_button-light {
   border: none;
   border-radius: 1rem;
   background-color: #ffffff;
   padding: 0.3rem 2.9rem 0.3rem 0.3rem;
 }
 
-.toggle_button-2 {
-  padding: 0.3rem 0.3rem 0.3rem 2.9rem;
+.toggle_button-dark {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.3rem 2.9rem 0.3rem 0.3rem;
 }
 
 .card_outer-container {
@@ -90,7 +93,24 @@
   background-color: #ffffff;
   padding: 0.2rem;
 }
+
 .icon-background {
   padding: 0.3rem;
   background-color: #ebeef6;
+}
+
+.card_container {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.card-outer {
+  /* padding: 0.2rem; */
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.card {
+  margin: 0.2rem;
+  border: 1px solid #e9faf5;
 }

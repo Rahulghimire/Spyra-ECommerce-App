@@ -49,7 +49,7 @@ const Sidemenu = () => {
               <NavLink
                 to="/dashboard"
                 className="text-decoration-none dashboard_links anchor-tag active-link gap-1"
-                exact
+                exact="true"
               >
                 <RxDashboard />
                 <div className="ms-2">Dashboard</div>
@@ -59,7 +59,7 @@ const Sidemenu = () => {
               <NavLink
                 to="/product-management"
                 className="text-decoration-none dashboard_links anchor-tag "
-                exact
+                exact="true"
               >
                 <RxDashboard className="icon" />
                 <div className="ms-2">Product Management</div>
@@ -69,7 +69,7 @@ const Sidemenu = () => {
               <NavLink
                 to="/catalogue-management"
                 className="text-decoration-none dashboard_links anchor-tag"
-                exact
+                exact="true"
               >
                 <FaBook className="icon" />
                 <div className="ms-2">Catalogue Management</div>
@@ -79,7 +79,7 @@ const Sidemenu = () => {
               <NavLink
                 to="/user-management"
                 className="text-decoration-none dashboard_links anchor-tag"
-                exact
+                exact="true"
               >
                 <FaUser className="icon" />
                 <div className="ms-2"> User Management</div>
@@ -89,7 +89,7 @@ const Sidemenu = () => {
               <NavLink
                 to="/order-management"
                 className="text-decoration-none dashboard_links anchor-tag"
-                exact
+                exact="true"
               >
                 <FaShoppingCart className="icon" />
                 <div className="ms-2"> Order Management</div>
@@ -99,7 +99,7 @@ const Sidemenu = () => {
               <NavLink
                 to="/payment-invoice"
                 className="text-decoration-none dashboard_links anchor-tag"
-                exact
+                exact="true"
               >
                 <FaMoneyBillWave className="icon" />
                 <div className="ms-2"> Payment & Invoice</div>
@@ -133,13 +133,13 @@ const Sidemenu = () => {
             </div>
             <div className="d-flex flex-row  justify-content-between toggler_bar">
               <div className="toggle_text">
-                <button className="toggle_button">
+                <button className="toggle_button-light">
                   <MdWbSunny size={12} />
                   <span className="toggle_text ms-2">Light mode</span>
                 </button>
               </div>
               <div className="toggle_text">
-                <button className="toggle_button toggle_button-2">
+                <button className="toggle_button-dark">
                   <MdNightsStay size={12} />
                   <span className="toggle_text ms-2">Dark mode</span>
                 </button>

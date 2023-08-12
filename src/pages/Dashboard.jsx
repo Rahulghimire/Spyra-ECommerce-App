@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import Sidemenu from "../Dashboard/Sidemenu";
 import Header from "../Dashboard/Header";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Chart from "../components/Chart";
+import Card from "../components/Card";
 
 const Dashboard = () => {
   return (
@@ -13,11 +17,13 @@ const Dashboard = () => {
         <div className="col-9 card_outer-container">
           <div className="row">
             <Header />
-            <div className="col d-flex flex-row card_container justify-content-between gap-1">
-              <div className="col-3 card">component</div>
-              <div className="col-3 card">Hello</div>
-              <div className="col-3 card">Hello</div>
-              <div className="col-3 card">Hello</div>
+            <div className="row m-0">
+              <div className="p-0 col d-flex flex-row card_container justify-content-between mt-3 flex-wrap">
+                <Card backgroundColor="#e9faf5" borderColor="#23ca99" />
+                <Card backgroundColor="#fff0f6" borderColor="#ff78ae" />
+                <Card backgroundColor="#eff0fe" borderColor="#5f63f2" />
+                <Card backgroundColor="#fff4e7" borderColor="#fb9a2c" />
+              </div>
             </div>
           </div>
           <div className="row">
