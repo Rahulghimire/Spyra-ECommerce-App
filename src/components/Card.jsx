@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import Chart from "./Chart";
 import CardLogo from "./CardLogo";
 
-const Card = ({ borderColor, backgroundColor }) => {
+const Card = ({ borderColor, backgroundColor, title }) => {
   return (
     <>
       <div className="card-outer">
@@ -14,17 +14,22 @@ const Card = ({ borderColor, backgroundColor }) => {
                 className="icon-background ms-3 p-2"
                 style={{
                   borderRadius: "1.5rem",
-                  backgroundColor: "#e9faf5",
+                  backgroundColor: backgroundColor,
                 }}
               >
-                <FaShoppingCart className="icon" size={15} />
+                <FaShoppingCart
+                  size={15}
+                  style={{
+                    color: borderColor,
+                  }}
+                />
               </div>
               <div>
                 <span
                   className="ms-2"
                   style={{ color: "#81899d", fontSize: "0.7rem" }}
                 >
-                  Total Order
+                  {title}
                 </span>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 // import DataTable from "react-data-table-component";
-const index = ({ title }) => {
+const index = ({ title, borderTop }) => {
   const columns = [
     {
       name: "Order ID",
@@ -96,7 +96,7 @@ const index = ({ title }) => {
   return (
     <div
       style={{
-        borderTop: "0.25rem solid #23ca99",
+        borderTop: borderTop,
         backgroundColor: "#fff",
         borderRadius: "0.3rem",
         padding: "0.7rem",
