@@ -120,26 +120,28 @@ const index = ({ title, borderTop }) => {
           highlightOnHover
           className="custom-data-table"
         ></DataTable> */}
-        <table className="table table-striped mt-2">
-          <thead className="thead-light">
-            <tr>
-              <th>Order ID</th>
-              <th>Email</th>
-              <th>Status</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.orderId}</td>
-                <td>{item.email}</td>
-                <td>{item.status}</td>
-                <td>{item.date}</td>
+        <div className="table-responsive">
+          <table className="table table-striped mt-2">
+            <thead className="thead-light">
+              <tr>
+                <th>Order ID</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {data.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.orderId}</td>
+                  <td>{item.email}</td>
+                  <td>{item.status}</td>
+                  <td>{item.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

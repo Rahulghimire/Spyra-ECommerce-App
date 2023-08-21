@@ -5,15 +5,27 @@ import { FaGlobe } from "react-icons/fa";
 import { MdMessage, MdNotifications } from "react-icons/md";
 import Avatar from "react-avatar";
 import nepalFlagIcon from "../../assets/nepal-flag-icon.svg";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isSidebarOpen, setSidebarOpen }) => {
+  const toggleSidebar = () => {
+    console.log(isSidebarOpen);
+    setSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
       <div className="col-12 header-container">
         <div className="d-flex flex-row justify-content-between">
           <div className="header-container--left d-flex flex-row align-items-center">
             <div>
-              <FaBars size={20} />
+              <Link
+                className="text-decoration-none"
+                style={{ color: "#000" }}
+                onClick={toggleSidebar}
+              >
+                <FaBars size={20} />
+              </Link>
             </div>
             <div
               className="ms-3"

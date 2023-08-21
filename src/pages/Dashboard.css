@@ -51,9 +51,10 @@
   font-size: 0.8rem;
   margin-bottom: 0.8rem;
 }
+.active,
 .active-link {
   background-color: #809fb8;
-  color: #fff;
+  color: #fff !important;
 }
 
 .toggler_bar {
@@ -85,7 +86,7 @@
 
 .header-container {
   background-color: #fff;
-  padding: 0.8rem;
+  padding: 1.4rem 0.8rem 0.8rem 0.8rem;
   box-shadow: 0.3rem 0.3rem 0.7rem#cecece;
 }
 
@@ -121,3 +122,9 @@
 .table > :not(caption) > * > * {
   background-color: #f2f7ff;
 }
+
+.dropdown-toggle::after {
+  opacity: 0;
+}
+
+/* Add a product css-------------------> */

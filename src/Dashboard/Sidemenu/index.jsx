@@ -21,6 +21,7 @@ const Sidemenu = () => {
   const handleSearch = () => {
     console.log("Searching for:", searchText);
   };
+
   return (
     <>
       <div className="d-flex flex-column">
@@ -47,29 +48,64 @@ const Sidemenu = () => {
           <div>
             <div className="dashboard_links-container">
               <NavLink
-                to="/dashboard"
-                className="text-decoration-none dashboard_links anchor-tag active-link gap-1"
+                to="/dashboard/home"
+                className="text-decoration-none dashboard_links anchor-tag gap-1"
                 exact="true"
+                activeClassName="active"
               >
                 <RxDashboard />
                 <div className="ms-2">Dashboard</div>
               </NavLink>
             </div>
-            <div className="dashboard_links-container">
-              <NavLink
-                to="/product-management"
-                className="text-decoration-none dashboard_links anchor-tag "
-                exact="true"
-              >
-                <RxDashboard className="icon" />
-                <div className="ms-2">Product Management</div>
-              </NavLink>
+            <div className="dashboard_links-container position-relative">
+              <div className="dropdown">
+                <NavLink
+                  to="/dashboard/product-management"
+                  className="text-decoration-none dashboard_links anchor-tag dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  activeClassName="active"
+                  exact="true"
+                >
+                  <RxDashboard className="icon" />
+                  <div className="ms-2">Product Management</div>
+                </NavLink>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li>
+                    <NavLink className="dropdown-item" to="/manage-product">
+                      Manage Product
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="dropdown-item"
+                      to="/dashboard/addproduct"
+                    >
+                      Add Product
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className="dropdown-item" to="/review-product">
+                      Review Product
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className="dropdown-item" to="/bulk-edit-product">
+                      Bulk Add / Edit Product
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="dashboard_links-container">
+            <div className="dashboard_links-container position-relative">
               <NavLink
                 to="/catalogue-management"
                 className="text-decoration-none dashboard_links anchor-tag"
                 exact="true"
+                activeClassName="active"
               >
                 <FaBook className="icon" />
                 <div className="ms-2">Catalogue Management</div>
