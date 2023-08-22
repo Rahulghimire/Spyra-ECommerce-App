@@ -71,7 +71,7 @@ const Sidemenu = () => {
                   <div className="ms-2">Product Management</div>
                 </NavLink>
                 <ul
-                  className="dropdown-menu"
+                  className="dropdown-menu position-relative"
                   aria-labelledby="dropdownMenuLink"
                 >
                   <li>

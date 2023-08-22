@@ -128,3 +128,58 @@
 }
 
 /* Add a product css-------------------> */
+
+.dropdown-menu {
+  --bs-dropdown-border-color: "none";
+  /* top: "-45px !important"; */
+}
+.add-product-header {
+  padding: 0.8rem 0 0 0.8rem;
+}
+
+ul.dropdown-menu {
+  inset: -50px auto auto 0px !important;
+}
+
+/* body {
+  inset: -45px auto auto 0px !important;
+} */
+
+.add-product-text {
+  color: "#606060";
+  box-shadow: "5px 5px 3px #f8f8f8";
+  background-color: "#fff";
+  border-radius: "5px";
+  font-weight: "600";
+}
+
+.file-upload {
+  position: relative;
+}
+
+.file-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px dotted #999;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-text {
+  width: 28px;
+  height: 28px;
+  font-size: 22px;
+  color: #606060;
+  border: 1px solid #606060;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
