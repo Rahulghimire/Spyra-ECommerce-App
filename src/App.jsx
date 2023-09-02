@@ -9,10 +9,10 @@ const AsyncAddProduct = lazy(() =>
   import("./pages/ProductManagement/AddProduct")
 );
 
-const AsyncDashboardHome = lazy(() => import("./Dashboard/DashboardHome"));
 const AsyncHome = lazy(() => import("./pages/Home"));
 const AsyncLogin = lazy(() => import("./components/Login"));
 const AsyncDashboard = lazy(() => import("./pages/Dashboard"));
+const DashbaordContent = lazy(() => import("./pages/DashbaordContent"));
 
 function App() {
   return (
@@ -22,8 +22,10 @@ function App() {
           <Routes>
             <Route path="/" element={<AsyncLogin />} />
             <Route path="/home" element={<AsyncHome />} />
-            <Route path="/dashboard" element={<AsyncDashboard />} />
-            <Route path="/dashboard/addproduct" element={<AsyncAddProduct />} />
+            <Route path="/dashboard" element={<AsyncDashboard />}>
+              <Route index element={<DashbaordContent />} />
+              <Route path="addproduct" element={<AsyncAddProduct />} />
+            </Route>
             <Route
               path="*"
               element={
